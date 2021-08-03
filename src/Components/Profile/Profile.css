@@ -1,0 +1,78 @@
+.user-profile{
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.user-input{
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.user-input .row {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.user-input .row .inputBox span{
+    text-align: left;
+    float: left;
+    margin: 3%;
+    color: white;
+    font-size: 1.3em;
+    font-weight: 500;
+}
+
+.inputBox .errors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-top: 2%;
+}
+
+.user-input .row .inputBox input{
+    border-radius: 5px;
+    height: 2.4em;
+}
+.user-input .row .inputBox textarea, .user-input .row .inputBox select{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 29px 26px;
+    border-radius: 5px;
+    margin-top: 2%;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+.user-input .inputBox textarea::placeholder {
+    color: white;
+    margin-left: 2em;
+}
+
+.user-input .inputBox input {
+    margin-top: 2%;
+}
+
+.user-input input[type="submit"] {
+    margin-top: 4%;
+    color: #fff;
+}
+.snbtn{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+
+.user-input .row .inputBox select option{
+    background: black;
+}
+

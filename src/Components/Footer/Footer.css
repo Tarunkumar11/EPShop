@@ -1,0 +1,61 @@
+.footer{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #1A1A1A;
+    color: rgb(182, 182, 182);
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.footer ul{
+    margin: 0;
+    padding: 0.4em;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.footer ul h1 {
+    font-size: 2.4em;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin: 1em 0em 1em 0em;
+
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 2em;
+    
+}
+.icons a i {
+    color: aqua;
+}
+
+@media screen  and (max-width:470px) {
+
+   
+
+    .footer ul {
+        width: 100%;
+    }
+
+    
+    .footer ul h1 {
+        font-size: 1.4em;
+    }
+
+    .icons {
+
+        font-size: 1em;
+        
+    }
+       
+}
+

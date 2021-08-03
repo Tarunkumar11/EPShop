@@ -1,0 +1,263 @@
+.login-container {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 1em;
+    font-family: 'Source Sans Pro', sans-serif;
+    background: linear-gradient(
+196deg
+, #5461e4, #6bc1a1,#9a9a9a00),linear-gradient(
+235deg
+, #f9ff0e, #f1dbdb,transparent),linear-gradient(
+45deg
+, #a26d6d,#a26d6d, transparent);
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 5% 10% 5% 10%;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.box .square-ver {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1em;
+    animation: animate 5s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+}
+
+.box .square {
+    position: absolute;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1em;
+    animation: hori 5s linear infinite;
+    animation-delay: calc(-1s * var(--i));
+    
+}
+
+
+@keyframes animate {
+    0%, 100%{
+        transform: translateY(50px);
+    }
+    50%{
+        transform: translateY(-50px);
+    }
+}
+
+
+@keyframes hori {
+    0%, 100%{
+        transform: translateX(50px);
+    }
+    50%{
+        transform: translateX(-50px);
+    }
+}
+
+.box .square-ver:nth-child(1){
+    top: 25%;
+    left: 67%;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.box .square-ver:nth-child(2){
+    top: 25%;
+    left: 27%;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.box .square-ver:nth-child(3){
+    top: 66%;
+
+    left: 27%;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+.box .square-ver:nth-child(4){
+    top: 66%;
+    left: 67%;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+
+.box .square:nth-child(5){
+    top: 25%;
+    left: 67%;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.box .square:nth-child(6){
+    top: 25%;
+    left: 27%;
+    width: 70px;
+    height: 70px;
+    z-index: 1;
+}
+
+.box .square:nth-child(7){
+    top: 66%;
+    left: 27%;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+.box .square:nth-child(8){
+    top: 66%;
+    left: 67%;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+}
+
+
+.box .container {
+    position: relative;
+    /* min-width: 60%; */
+    min-width: 21em;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+}
+
+.form {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.form h2{
+    position: relative;
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    margin-bottom: 1px;
+}
+.form h2::after {
+    content: "";
+    display: inline-block;
+    width: 80%;
+    height: 3px;
+    background: white;
+}
+.form form {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.form form a{
+    text-decoration: none;
+    margin-top: 0;
+    padding-top: 0
+}
+
+.inputBox {
+    width: 100%;
+}
+.form .inputBox input, .form .inputBox select{
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 35px;
+    margin-top: 10%;
+    letter-spacing: 1px;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form  .inputBox span{
+    text-align: left;
+    float: left;
+    margin-top: 2%;
+    /* margin: 3%; */
+    color: white;
+    /* font-size: 1.3em;
+    font-weight: 500; */
+}
+
+
+.form .inputBox select option{
+    background: black;
+}
+.form .inputBox input::placeholder {
+    color: white;
+    margin-left: 2em;
+}
+
+.form .inputBox input[type='submit']{
+    background: white;
+    color: #666;
+    font-weight: 700;
+    box-shadow: 2px 3px 6px;
+    padding: 1em 2em 1em 2em;
+    cursor: pointer;
+    width: 48%;
+    height: 3em;
+    float: left;
+}
+
+.form .inputBox input[type='submit']:hover{
+    background: linear-gradient(45deg, rgb(5, 223, 96),white);
+}
+.inputBox .errors {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding-top: 2%;
+}
+
+.forgot, .sign-up{
+    margin-top: 9%;
+    margin-bottom: 0;
+    color: white;
+}
+
+.forgot a, .sign-up a {
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+}
