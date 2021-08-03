@@ -10,6 +10,7 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [currentUser, setCurrentUser] = useState()
+  const [currentUserPure, setCurrentUserPure]   = useState(null)
   const [loading, setLoading] = useState(true)
 
   function signup(email, password) {
@@ -34,13 +35,13 @@ export function AuthProvider({ children }) {
   }
 
   function updatePassword(password) {
-    return currentUser.updatePassword(password)
+    return currentUserPure.updatePassword(password)
   }
 
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
     
-
+      setCurrentUserPure(user)
       if(user)
       {
         db.collection('users').doc(user.uid).get().then(querySnapshot => {
