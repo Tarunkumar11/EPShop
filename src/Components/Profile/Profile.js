@@ -6,8 +6,19 @@ import {db} from '../../firebase'
 import {Link } from "react-router-dom";
 
 
-function Profile() {
-    const {currentUser} = useAuth()
+function Profile(props) {
+    console.log(props)
+    let {currentUser} = useAuth()
+
+    try{
+        if(props.location.currentUser){
+            currentUser = props.location.currentUser
+        }
+    }   
+    catch{
+        console.log("NO User")
+    }
+    console.log(currentUser)
     const cities = [{key:"Gujrat", value:"Gujrat"}, {key:"hyderabad", value:"hyderabad"}, {key:"Delhi", value:"Delhi"}]
     const states = [{key: "Uttar Pradesh", value: "Uttar Pradesh"}, {key:"telangana", value:"telangana"}]
     const countries = [{key:"india", value:"india"}, {key:"Norway", value:"Norway"}]
@@ -136,7 +147,6 @@ function Profile() {
 // }, [])
 
 
-    console.log(formik.values)
     
   return ( !loading &&
     <div className="user-profile">

@@ -72,9 +72,6 @@ function AddBook() {
         }
 
     })
-
-    
-    console.log("fdsfsd",formik.values)
     return (
         <div className="container addbook">
             <h1>Add New Book</h1>

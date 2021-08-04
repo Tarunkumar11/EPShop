@@ -6,7 +6,6 @@ import {db} from '../../firebase'
 function NavbarList(props) {
     
     const {logout, currentUser} = useAuth()
-    console.log("current: ", currentUser)
     async function handleAdminRequest() {
         db.collection("adminRequests").doc(currentUser.uid).set({
             uid: currentUser.uid,
@@ -21,7 +20,6 @@ function NavbarList(props) {
     }
     const navItem = props.items;
     async function handleLogout(){
-        console.log("logout me")
         logout()
     }
     

@@ -1,11 +1,13 @@
-import React, {useState,useEffect, createRef} from 'react'
+import React, {useState,useEffect} from 'react'
 import './AdminPanel.css'
 import {db} from '../../firebase'
+import {Link } from "react-router-dom";
+
 
 function AdminPanel() {
 
     const [allUsers, setAllUsers] = useState(null)
-    const deleteRef = createRef()
+
     function handledelete(data) {
         
         let flag  = window.confirm("you want to delete " + data.firstName + " account?");
@@ -22,13 +24,11 @@ function AdminPanel() {
                  console.error("Error writing document: ", error);
              });
         }
-        console.log(flag,data)
     }
     useEffect(() => {
         db.collection('users').get().then(querySnapshot => {
         const documents = querySnapshot.docs.map(doc => doc.data())
         const result = documents.filter(word => word.isDelete === false);
-        console.log(documents,result)
         setAllUsers(result)
         })
     }, [])
@@ -46,20 +46,22 @@ function AdminPanel() {
                     <th scope="col">Description</th>
                     <th scope="col">Phone No</th>
                     <th scope="col">edit</th>
-                    <th scope="col" ref = {deleteRef}>Delete</th>
+                    <th scope="col">Delete</th>
                     </tr>
                 </thead>
                 <tbody>
                     {
                         allUsers.map((user) => {
-                            return <tr>
+                            return <tr key={user.uid}>
                                 {/* <th scope="row">{user.uid}</th> */}
                                 <td>{user.firstName}</td>
-                                <td><textarea defaultValue={user.addressOne}></textarea></td>
-                                <td><textarea>{user.addressOne}</textarea></td>
+                                <td><textarea defaultValue={user.addressOne} ></textarea></td>
+                                <td><textarea defaultValue={user.addressTwo}></textarea></td>
                                 <td>{user.mobileNo}</td>
-                                <td>edit</td>
-                                <td onClick={() => {handledelete(user)}} data={user}>delete</td>
+                                <td className="edit"><Link to={{ pathname: `/cuser/${user.firstName}`,
+                                                currentUser:user
+                                                }} props={user}>edit</Link></td>
+                                <td className="delete"  onClick={() => {handledelete(user)}} data={user}>delete</td>
                             </tr>
                         })
                     }

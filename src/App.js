@@ -26,6 +26,7 @@ function App() {
           </Route>
           <PrivateRounte exact path="/addbook" component={AddBook} />
           <PrivateRounte exact path="/user" component={Profile} />
+          <AdminPrivateRoute exact path='/cuser/:firstName' component={Profile} />
           <PrivateRounte exact path="/updatepassword" component={UpdatePassword} />
           <AdminPrivateRoute exact path='/admin'  component={AdminPanel} />
           <UPrivateRounte exact path='/login' component={Login} />

@@ -26,7 +26,6 @@ function BookStore() {
         let newfilteedBook = []
         
         if(bookstore){
-            console.log(filteedBook, formik.values.category)
             bookstore.forEach(book => {
                 if(!formik.values.category){
                     newfilteedBook.push(book)
@@ -62,6 +61,7 @@ function BookStore() {
                 <div className="feedback">
                     {
                         filteedBook.map((book) => {
+                            console.log(book)
                             return  <Book key={book.id} data={book} />
                         })    
                     }

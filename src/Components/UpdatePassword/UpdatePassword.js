@@ -51,7 +51,6 @@ function UpdatePassword() {
 
     })
 
-    console.log(formik.values)
 
     return (
         <div className="update-password">
