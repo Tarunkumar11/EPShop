@@ -7,7 +7,7 @@ import {Link } from "react-router-dom";
 
 
 function Profile(props) {
-    console.log(props)
+    
     let {currentUser} = useAuth()
 
     try{
@@ -18,7 +18,6 @@ function Profile(props) {
     catch{
         console.log("NO User")
     }
-    console.log(currentUser)
     const cities = [{key:"Gujrat", value:"Gujrat"}, {key:"hyderabad", value:"hyderabad"}, {key:"Delhi", value:"Delhi"}]
     const states = [{key: "Uttar Pradesh", value: "Uttar Pradesh"}, {key:"telangana", value:"telangana"}]
     const countries = [{key:"india", value:"india"}, {key:"Norway", value:"Norway"}]
@@ -55,6 +54,7 @@ function Profile(props) {
              }, { merge: true })
              .then(() => {
                 alert("Data successfully stored!");
+                window.location.reload();
 
             })
             .catch((error) => {
@@ -239,7 +239,7 @@ function Profile(props) {
                 </div>
                 <div className="col-lg-6 col-sm-12 inputBox">
                     <span>If other Countery</span>
-                    <input type="text" placeholder="city" name='country' onChange={formik.handleChange} value={formik.values.country} onBlur={formik.handleBlur} />
+                    <input type="text" placeholder="Country" name='country' onChange={formik.handleChange} value={formik.values.country} onBlur={formik.handleBlur} />
                     {formik.touched.country  && formik.errors.country ? <div className="errors">{formik.errors.country}</div> : null}
                 </div>
             </div>

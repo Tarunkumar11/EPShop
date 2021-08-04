@@ -1,4 +1,4 @@
-import React, {useState, useEffect, createRef} from 'react'
+import React, {useState, useEffect} from 'react'
 import './BookStore.css'
 import Book from '../Book/Book'
 import { useFormik } from 'formik'
@@ -61,8 +61,7 @@ function BookStore() {
                 <div className="feedback">
                     {
                         filteedBook.map((book) => {
-                            console.log(book)
-                            return  <Book key={book.id} data={book} />
+                            return <Book key={book.id} data={book} />
                         })    
                     }
                 </div>

@@ -6,6 +6,12 @@ import { useAuth } from '../../contexts/AuthContext';
 import { useHistory } from "react-router-dom";
 
 function AddBook() {
+    function uuidv4() {
+        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+          var r = Math.random() * 16 | 0, v = c === 'x' ? r : ((r & 0x3) | 0x8);
+          return v.toString(16);
+        });
+      }
     
     const {currentUser} = useAuth()
       const history = useHistory()
@@ -27,7 +33,9 @@ function AddBook() {
 
         onSubmit:async values => {
             
-            db.collection("Books").add({
+            const uuid = uuidv4()
+            db.collection("Books").doc(uuid).set({
+                id:uuid,
                 name:values.name,
                 author:values.author,
                 category:values.category,

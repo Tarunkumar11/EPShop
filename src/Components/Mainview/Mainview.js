@@ -2,7 +2,7 @@ import React from 'react'
 import './Mainview.css'
 import AnimatedBg from "react-animated-bg";
 import background3 from '../../Images/background3.webp'
-import background4 from '../../Images/background4.webp'
+import background4 from '../../Images/background4.png'
 import background5 from '../../Images/background5.webp'
 import background6 from '../../Images/background6.webp'
 import { useAuth } from '../../contexts/AuthContext';
@@ -14,6 +14,8 @@ function Mainview() {
         `url(${background4})`,
         `url(${background5})`,
         `url(${background6})`,
+        'url("https://swall.teahub.io/photos/small/12-126004_background-full-hd-1080p-full-hd-3d-background.jpg")'
+        
       ]
       const {currentUser} = useAuth()
       const history = useHistory()

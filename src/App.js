@@ -14,6 +14,7 @@ import BookStore from './Components/BookStore/BookStore';
 import AddBook from './Components/AddBook/AddBook';
 import AdminPanel from './Components/AdminPanel/AdminPanel';
 import UpdatePassword from './Components/UpdatePassword/UpdatePassword';
+import ForgotPassword from './Components/ForgotPassword/ForgotPassword';
 function App() { 
   return (
     <AuthProvider>
@@ -31,6 +32,7 @@ function App() {
           <AdminPrivateRoute exact path='/admin'  component={AdminPanel} />
           <UPrivateRounte exact path='/login' component={Login} />
           <UPrivateRounte exact path='/signup' component={Signup} />
+          <UPrivateRounte exact path='/forgot-password' component={ForgotPassword} />
         </Router>
         <Footer />
       </div>
