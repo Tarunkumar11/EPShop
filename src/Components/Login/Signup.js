@@ -117,7 +117,7 @@ function Signup() {
                                 <input type="password" placeholder="Confirm Paasword" name="confirmPassword" onChange={formik.handleChange} value={formik.values.confirmPassword} onBlur={formik.handleBlur} />
                                 {formik.touched.confirmPassword && formik.errors.confirmPassword ? <div className="errors">{formik.errors.confirmPassword}</div>  : null}
                             </div>
-                            <div className="col-lg-6 col-sm-12 inputBox">
+                            <div className="col-lg-12 col-sm-12 inputBox">
                                 <span>Hint Question</span>
                                 <select name="question" value={formik.values.question} onChange={formik.handleChange} >
                                     <option value={option[0].value}>{option[0].key}</option>

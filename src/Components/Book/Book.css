@@ -1,6 +1,6 @@
 .feedback-card{
     background-color: #08AEEA;
-    background-image: linear-gradient(0deg, #e8dce5 0%, #5d5d5d 100%);
+    background-image: linear-gradient(0deg, #ffffff 0%, #fff8f8 100%);
     width: 98%;
     height: 80%;
     display:flex;
@@ -9,6 +9,7 @@
     border-radius:1em;
     align-items: center;
     margin-top: 1em;
+    color: black;
 }
 .hide {
   display: none;
@@ -35,9 +36,10 @@
     width: 28%;
 }
 .user-name h1{
-    margin: 0;
+  margin: 0;
   color: #444141;
   font-size: 1.5em;
+  font-weight: 600;
 }
 .text-content p{
     text-align: justify;
@@ -57,7 +59,9 @@
     .feedback-card{
         flex-direction: column;
     }
-      
+    .user-name{
+      width: 90%;
+    }
   }
 
   @media screen and (max-width:624px) {
@@ -70,6 +74,9 @@
     .profile-img{
         width: 239px;
     height: 236px;
+    }
+    .user-name{
+      width: 90%;
     }
   }
 
