@@ -76,3 +76,16 @@
     background: black;
 }
 
+.update-pass {
+    margin-top: 5%;
+
+}
+.update-pass{
+    color: white;
+}
+.bu{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}

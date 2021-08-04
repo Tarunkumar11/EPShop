@@ -41,11 +41,12 @@ export function AuthProvider({ children }) {
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
     
-      setCurrentUserPure(user)
+      
       if(user)
       {
         db.collection('users').doc(user.uid).get().then(querySnapshot => {
         const newUser = {...querySnapshot.data(), email:user.email}
+        setCurrentUserPure(user)
         setCurrentUser(newUser)
         setLoading(false)
         })

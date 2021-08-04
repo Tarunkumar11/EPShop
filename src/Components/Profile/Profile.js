@@ -3,6 +3,7 @@ import './Profile.css';
 import { useFormik } from 'formik'
 import { useAuth } from '../../contexts/AuthContext';
 import {db} from '../../firebase'
+import {Link } from "react-router-dom";
 
 
 function Profile() {
@@ -103,6 +104,8 @@ function Profile() {
             formik.values.postalCode = preInfo.postalCode
             formik.touched.postalCode  = true
             formik.values.mobileNo = preInfo.mobileNo
+            formik.touched.mobileNo  = true
+            formik.values.homePhone  = preInfo.homePhone
             formik.touched.homePhone  = true
             formik.values.officeNo = preInfo.officeNo
             formik.touched.officeNo  = true
@@ -260,8 +263,13 @@ function Profile() {
                 </div>
             </div>
             
+            <div className="bu">
             <input type="submit" className="btn btn-outline-secondary" />
+            <Link to={{ pathname: "/updatepassword/"}}><input type="button" className="btn btn-outline-secondary update-pass" value="Update Password"/></Link>
+            </div>
         </form>
+
+        
       </div>
     </div>
   );

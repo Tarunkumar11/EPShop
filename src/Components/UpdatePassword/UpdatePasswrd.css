@@ -1,0 +1,25 @@
+
+.update-password{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 10%;
+}
+
+.dropdown-menu {
+    position: relative;
+    display: inline;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.errors{
+    font-size: 1em;
+}
