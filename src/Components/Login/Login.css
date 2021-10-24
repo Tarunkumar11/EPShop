@@ -208,10 +208,14 @@ padding: 5% 10% 5% 10%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* .form .inputBox select{
+    margin-top: 5%;
+} */
 .form  .inputBox span{
     text-align: left;
     float: left;
     margin-top: 2%;
+  
     /* margin: 3%; */
     color: white;
     /* font-size: 1.3em;
@@ -220,7 +224,8 @@ padding: 5% 10% 5% 10%;
 
 
 .form .inputBox select option{
-    background: black;
+    color: black;
+    background: #5e5b5b27;
 }
 .form .inputBox input::placeholder {
     color: white;

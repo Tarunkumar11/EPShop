@@ -82,7 +82,8 @@ function Signup() {
 
     })
 
-    const option = [{'key':"What is your pet name",'value':"1"},
+    const Questions = [{'key': "Hint Question", value:""},
+                    {'key':"What is your pet name",'value':"1"},
                     {'key':"What is your first school name",'value':"2"}
                     ]
 
@@ -117,11 +118,12 @@ function Signup() {
                                 <input type="password" placeholder="Confirm Paasword" name="confirmPassword" onChange={formik.handleChange} value={formik.values.confirmPassword} onBlur={formik.handleBlur} />
                                 {formik.touched.confirmPassword && formik.errors.confirmPassword ? <div className="errors">{formik.errors.confirmPassword}</div>  : null}
                             </div>
-                            <div className="col-lg-12 col-sm-12 inputBox">
-                                <span>Hint Question</span>
+                            <div className="inputBox">
+                                {/* <span>Hint Question</span> */}
                                 <select name="question" value={formik.values.question} onChange={formik.handleChange} >
-                                    <option value={option[0].value}>{option[0].key}</option>
-                                    <option value={option[1].value} >{option[1].key}</option>
+                                    {
+                                        Questions.map((question) => {return <option key={question.value} value={question.value}>{question.key}</option> })
+                                    }   
                                 </select>
                                 {formik.touched.question  && formik.errors.question ? <div className="errors">{formik.errors.question}</div> : null}
                             </div>

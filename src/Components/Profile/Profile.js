@@ -124,29 +124,6 @@ function Profile(props) {
             })
 
         }, [])
-
-
-
-//     useEffect(() => {
-
-//         db.collection('users').doc(user.uid).get().then(querySnapshot => {
-//             const newUser = {...querySnapshot.data(), email:user.email}
-//             setCurrentUser(newUser)
-//             setLoading(false)
-
-
-//         const firestore = db.collection("users").doc(currentUser.uid)
-//         async function f1() {
-//             let snapshot =  await firestore.get();
-//             let data = {...snapshot.data()}
-//             return data
-//         }
-//         f1().then((data) =>{setInitialValues(data); formik.values = data})
-        
-        
-// }, [])
-
-
     
   return ( !loading &&
     <div className="user-profile">

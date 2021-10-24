@@ -22,8 +22,6 @@ function NavbarList(props) {
     async function handleLogout(){
         logout()
     }
-    
-    
     return (
         <nav>
             <Link to = {{pathname: `/${navItem[0].link}`}} key={navItem[0].btn} ><li>{navItem[0].btn}</li> </Link>
